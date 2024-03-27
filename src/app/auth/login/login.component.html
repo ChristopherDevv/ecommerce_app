@@ -1,0 +1,91 @@
+<section class="tw-min-h-screen tw-w-full tw-overflow-hidden tw-flex tw-justify-center tw-items-center tw-flex-col-reverse lg:tw-flex-row">
+    <div class="tw-hidden lg:tw-flex tw-flex-col tw-items-start tw-justify-between tw-w-full lg:tw-w-1/3 tw-h-screen tw-bg-blue-200 tw-bg-cover tw-bg-no-repeat tw-bg-center tw-p-10" style="background-image: url('/assets/img/img-login.jpg');">
+        <div class="tw-w-full tw-h-auto tw-hidden lg:tw-block">
+            <img class="tw-w-44 tw-h-auto" src="/assets/img/primary_logo_white2.svg" alt="primary logo white">
+        </div>
+        <div class="tw-h-auto tw-w-full tw-text-white">
+            <p-carousel [value]="testimonials" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="3000">
+                <ng-template let-testimonial pTemplate="item">
+                  <div class="testimonial-item tw-flex tw-flex-col tw-items-center tw-justify-center tw-gap-3 tw-text-center tw-mb-5">
+                    <img class="tw-w-24" src="{{ testimonial.image }}" alt="{{ testimonial.name }}" />
+                    <p class="tw-text-white">{{ testimonial.text }}</p>
+                    <h4>{{ testimonial.name }}</h4>
+                  </div>
+                </ng-template>
+              </p-carousel>
+        </div>
+        <div class="tw-w-full">
+            <p class="tw-text-white tw-text-sm tw-text-center tw-mb-4">© 2024 All rights reserved. Designed by <a href="#" class="tw-text-white tw-opacity-50 hover:tw-opacity-100 tw-transition-all tw-duration-300">Nova Ecommerce</a></p>
+            <div class="tw-flex tw-items-center tw-justify-center tw-text-center tw-gap-5 tw-text-xs">
+                <a href="#" class="tw-text-white tw-opacity-50 hover:tw-opacity-100 tw-transition-all tw-duration-300 tw-flex tw-items-center tw-justify-center tw-gap-1"><span><i class="pi pi-info-circle tw-block"></i></span> Legal</a>
+                <a href="#" class="tw-text-white tw-opacity-50 hover:tw-opacity-100 tw-transition-all tw-duration-300 tw-flex tw-items-center tw-justify-center tw-gap-1"><span><i class="pi pi-lock tw-block"></i></span> Privacity</a>
+            </div>
+        </div>
+    </div>
+    <div class="tw-w-full bg-img-login lg:tw-w-2/3 tw-min-h-screen tw-flex tw-flex-col lg:tw-flex-row tw-gap-32 lg:tw-gap-0 tw-items-center lg:tw-justify-center tw-p-7 md:tw-p-20 lg:tw-p-0" style="background-image: url('/assets/img/img-login.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+        <div class="tw-w-full tw-h-auto lg:tw-hidden">
+            <img class="tw-w-44 tw-h-auto" src="/assets/img/primary_logo_white2.svg" alt="primary logo white">
+        </div>
+        <div class="tw-w-full lg:tw-w-[45%] tw-h-1/2 tw-flex tw-items-center tw-justify-center"> <!-- tw-border tw-shadow-md tw-rounded-lg -->
+            <div class="tw-w-full tw-text-white lg:tw-text-gray-600">
+                <div class="tw-mb-5">
+                    <div class="tw-flex tw-items-center tw-gap-5 tw-mb-1 tw-h-10">
+                        <h1 class="tw-font-semibold tw-text-2xl">Sign in</h1>
+                        @if(showSpinner) {
+                            <app-primary-spinner></app-primary-spinner>
+                        }
+                    </div>
+                    <h2 class="tw-opacity-70 lg:tw-opacity-50 tw-text-base tw-font-normal">Enter your creadential to get access</h2>
+                </div>
+                <form action="">
+                    <div class="tw-text-sm tw-mb-5">
+                        <label class="tw-block tw-font-medium tw-mb-2" for="username"><span class="tw-text-red-500">* </span>Username</label>
+                        <p-iconField id="username" iconPosition="left">
+                            <p-inputIcon styleClass="pi pi-user" />
+                            <input [(ngModel)]="creadentials.username" name="username" class="tw-text-sm tw-w-full" type="text" pInputText placeholder="Username">
+                        </p-iconField>
+                    </div>
+                    <div class="tw-text-sm tw-mb-6">
+                        <div class="tw-flex tw-items-center tw-justify-between tw-mb-2">
+                            <label class="tw-block tw-font-medium" for="password"><span class="tw-text-red-500">* </span>Password</label>
+                            <a href="#" class="tw-text-white lg:tw-text-gray-600 tw-text-xs hover:tw-text-blue-500 tw-opacity-70 lg:tw-opacity-50 hover:tw-opacity-100 tw-transition-all tw-duration-300">Forget password?</a>
+                        </div>
+    
+                        <div class="password-field">
+                            <i class="pi pi-lock password-icon tw-text-[#6B7280]"></i>
+                            <p-password [(ngModel)]="creadentials.password" name="password" [toggleMask]="true" [feedback]="true" placeholder="••••••"></p-password>
+                          </div>            
+                    </div>
+                    <div class="tw-flex tw-items-center tw-justify-between">
+                        <div class="tw-w-1/2">
+                            <a routerLink="/products" class="tw-text-xs tw-text-white lg:tw-text-gray-600">Don't have an account? <span class="tw-text-blue-300 lg:tw-text-blue-500">Sign Up</span></a>
+                        </div>
+                        <div class="card">
+                            <p-toast [breakpoints]="{'920px': {width: '80%'}}" position="top-right"></p-toast>
+                            <app-primary-button-md [buttonText]="'Login'" (click)="handleLogin()" label="Show"></app-primary-button-md>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="tw-h-auto tw-w-full tw-text-white lg:tw-hidden">
+            <p-carousel [value]="testimonials" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="3000">
+                <ng-template let-testimonial pTemplate="item">
+                  <div class="testimonial-item tw-flex tw-flex-col tw-items-center tw-justify-center tw-gap-3 tw-text-center tw-mb-5">
+                    <img class="tw-w-24" src="{{ testimonial.image }}" alt="{{ testimonial.name }}" />
+                    <p class="tw-text-white">{{ testimonial.text }}</p>
+                    <h4>{{ testimonial.name }}</h4>
+                  </div>
+                </ng-template>
+              </p-carousel>
+        </div>
+        <div class="tw-w-full lg:tw-hidden">
+            <p class="tw-text-white tw-text-sm tw-text-center tw-mb-4">© 2024 All rights reserved. Designed by <a href="#" class="tw-text-white tw-opacity-50 hover:tw-opacity-100 tw-transition-all tw-duration-300">Nova Ecommerce</a></p>
+            <div class="tw-flex tw-items-center tw-justify-center tw-text-center tw-gap-5 tw-text-xs">
+                <a href="#" class="tw-text-white tw-opacity-50 hover:tw-opacity-100 tw-transition-all tw-duration-300 tw-flex tw-items-center tw-justify-center tw-gap-1"><span><i class="pi pi-info-circle tw-block"></i></span> Legal</a>
+                <a href="#" class="tw-text-white tw-opacity-50 hover:tw-opacity-100 tw-transition-all tw-duration-300 tw-flex tw-items-center tw-justify-center tw-gap-1"><span><i class="pi pi-lock tw-block"></i></span> Privacity</a>
+            </div>
+        </div>
+    </div>
+    
+</section>

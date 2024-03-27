@@ -1,0 +1,29 @@
+<div>
+    <header class="primary-header-gradient tw-h-[70px] tw-block tw-top-0 tw-w-full tw-fixed tw-z-10">
+        <section class="tw-w-[18%] tw-h-[70px] tw-bg-white tw-flex tw-items-center tw-justify-center">
+            <img class="tw-w-40 tw-h-auto" src="/assets/img/primary_logo_blue.svg" alt="primary logo blue">
+        </section>
+    </header>
+    
+    <nav class="primary-nav-shadow tw-w-[18%] tw-h-screen tw-top-[70px] tw-bg-white tw-block tw-fixed tw-bg-opacity-70 tw-backdrop-filter tw-backdrop-blur-md tw-z-20" >      
+        <hr>
+        <section class="">
+            <p-panelMenu [model]="items"></p-panelMenu>
+            @if(isActive) {
+                <div class="tw-w-full tw-h-40 tw-rounded-lg tw-bg-purple-500">
+                    <h5>Checkout</h5>
+                </div>
+            }
+        </section>
+         <a routerLink="/products">Products</a>
+    </nav>
+    
+    <main class="tw-ml-[18%] tw-mt-[70px] tw-overflow-hidden tw-block tw-p-7">
+        <!-- Content principal and dinamic -->
+        <ng-content></ng-content>
+        <a routerLink="/checkout">checkout</a>
+        <div class="tw-h-screen tw-w-full tw-bg-white">
+
+        </div>
+    </main>
+</div>

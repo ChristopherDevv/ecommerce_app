@@ -1,0 +1,22 @@
+.primary-button-md {
+    /*  position: absolute; */
+     cursor: pointer;
+     transition: all 0.2s;
+     background: linear-gradient(to left, #3b82f6, #06b6d4);
+     color: #ffffff;
+     padding: 0.6rem 2.25rem;
+     border-radius: 9999px;
+     border-bottom: 4px solid #1e40af;
+ }
+ 
+ .primary-button-md:hover {
+     filter: brightness(110%);
+     transform: translateY(-0.25rem);
+     border-bottom: 6px solid #1e40af;
+ }
+ 
+ .primary-button-md:active {
+     border-bottom: 2px solid #1e40af;
+     filter: brightness(90%);
+     transform: translateY(0.5rem);
+ }

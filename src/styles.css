@@ -1,1 +1,196 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
+/* 
+ *
+ *
+ *  START GLOBAL STYLES
+ *
+*/
+
+h1, h2, h3, h4, h5 {
+    padding: 0%;
+    margin: 0%;
+    font-weight: normal;
+}
+p, a {
+    padding: 0%;
+    margin: 0%;
+    text-decoration: none;
+    color: #4b5563;
+    font-weight: normal;
+}
+label {
+    margin: 0%;
+}
+
+button {
+    border: none;
+}
+
+hr {
+    height: 3.5px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    background: linear-gradient(to right, transparent, black, transparent);
+    opacity: 0.1;
+}
+
+/* 
+ *
+ *
+ *  END GLOBAL STYLES
+ *
+*/
+
+/* 
+ *
+ *
+ *  START LOGIN PAGE STYLES
+ *
+*/
+
+.password-field {
+    position: relative;
+}
+.p-password {
+    width: 100% !important;
+}
+.password-icon {
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10 !important;
+}
+.p-inputtext{
+    padding-left: 40px;
+    width: 100%;
+}
+
+/* 
+ *
+ *
+ *  END LOGIN PAGE STYLES
+ *
+*/
+
+
+/* 
+ *
+ *
+ *  START PRIME NG STYLES 
+ *
+*/
+
+/* BUTTONS LOGINH PAGE */
+button.p-ripple.p-element.p-carousel-next.p-link.ng-star-inserted .p-icon{
+    color: white !important;
+} 
+button.p-ripple.p-element.p-carousel-prev.p-link.ng-star-inserted .p-icon{
+    color: white !important;
+}
+button.p-ripple.p-element.p-carousel-next.p-link.ng-star-inserted .p-icon,
+button.p-ripple.p-element.p-carousel-prev.p-link.ng-star-inserted .p-icon {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+
+button.p-ripple.p-element.p-carousel-next.p-link.ng-star-inserted:hover .p-icon,
+button.p-ripple.p-element.p-carousel-prev.p-link.ng-star-inserted:hover .p-icon {
+    color: darkgray !important;
+}
+
+/* LINKS NAV */
+.p-panelmenu .p-panelmenu-header .p-panelmenu-header-content {
+    border: none;
+    border-radius: 0px;
+    background: white;
+    transition: background 1s ease;
+}
+.p-panelmenu .p-panelmenu-header .p-panelmenu-header-content:hover {
+    background: #f3f4f6;
+}
+.p-panelmenu .p-panelmenu-header .p-panelmenu-header-content .p-panelmenu-header-action {
+    color: #6b7280;
+    padding: 1.25rem;
+    font-weight: 700;
+}
+.p-panelmenu .p-panelmenu-content .p-menuitem > .p-menuitem-content .p-menuitem-link {
+    color: #4b5563;
+    padding: 0.75rem 1.25rem;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.p-panelmenu .p-menuitem-text {
+    font-size: 15px;
+}
+.p-panelmenu .p-panelmenu-content .p-menuitem > .p-menuitem-content {
+    background: white;
+    transition: background 1s ease;
+}
+.p-panelmenu .p-panelmenu-content .p-menuitem > .p-menuitem-content:hover {
+    background: #f3f4f6;
+}
+
+/* 
+ *
+ *
+ *  END PRIME NG STYLES 
+ *
+*/
+
+
+/* 
+ *
+ *
+ *  START TRANSITIONS IN ROUTES
+ *
+*/
+::view-transition-old(root) {
+    animation: exit 1s ease 0s 1 normal forwards;
+}
+::view-transition-new(root) {
+    animation: enter 2s ease 0s 1 normal forwards;
+}
+
+
+@keyframes enter {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes exit {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+}
+
+/* 
+ *
+ *
+ *  END TRANSITIONS IN ROUTES
+ *
+*/
+
+  /* 
+  border-right: 1px solid #e5e5e5 !important;
+  */

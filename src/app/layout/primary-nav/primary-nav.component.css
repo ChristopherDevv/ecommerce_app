@@ -1,0 +1,9 @@
+.primary-nav-shadow {
+    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.03);
+}
+.primary-header-gradient {
+    background: rgb(255,255,255);
+    /*  background: linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(235,255,254,0.7) 47%, rgba(174,217,255,0.7) 100%); */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 47%, rgba(255, 255, 255, 0.7) 100%);
+    backdrop-filter: blur(12px);
+}
